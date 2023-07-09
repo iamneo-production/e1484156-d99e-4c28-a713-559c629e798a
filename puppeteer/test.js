@@ -3,11 +3,7 @@ const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     try{
- Birthday-Event-Management-System--meghana1710
     await page.goto('https://8081-aceeaffdefeaedafbaaabdbdcfdaefedccc.project.examly.io/');
-=======
-    await page.goto('https://8081-cbcfcdffdebaedafbaaabdbdcfdaefedccc.project.examly.io/');
- main
     await page.setViewport({
       width:1200,
       height:800,
@@ -39,11 +35,7 @@ const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     try{
-Birthday-Event-Management-System--meghana1710
     await page.goto('https://8081-aceeaffdefeaedafbaaabdbdcfdaefedccc.project.examly.io/');
-
-    await page.goto('https://8081-cbcfcdffdebaedafbaaabdbdcfdaefedccc.project.examly.io/');
- main
     await page.setViewport({
       width:1200,
       height:800,
@@ -70,10 +62,7 @@ Birthday-Event-Management-System--meghana1710
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     try{
-      Birthday-Event-Management-System--meghana1710
     await page.goto('https://8081-aceeaffdefeaedafbaaabdbdcfdaefedccc.project.examly.io/');
-    await page.goto('https://8081-cbcfcdffdebaedafbaaabdbdcfdaefedccc.project.examly.io/');
-      main
     await page.setViewport({
       width:1200,
       height:800,
@@ -104,11 +93,7 @@ Birthday-Event-Management-System--meghana1710
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   try{
- Birthday-Event-Management-System--meghana1710
   await page.goto('https://8081-aceeaffdefeaedafbaaabdbdcfdaefedccc.project.examly.io/');
-
-  await page.goto('https://8081-cbcfcdffdebaedafbaaabdbdcfdaefedccc.project.examly.io/');
- main
   await page.setViewport({
     width:1200,
     height:800,
@@ -137,11 +122,7 @@ Birthday-Event-Management-System--meghana1710
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   try{
- Birthday-Event-Management-System--meghana1710
   await page.goto('https://8081-aceeaffdefeaedafbaaabdbdcfdaefedccc.project.examly.io/');
-
-  await page.goto('https://8081-cbcfcdffdebaedafbaaabdbdcfdaefedccc.project.examly.io/');
- main
   await page.setViewport({
     width:1200,
     height:800,
@@ -170,11 +151,7 @@ Birthday-Event-Management-System--meghana1710
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   try{
-Birthday-Event-Management-System--meghana1710
   await page.goto('https://8081-aceeaffdefeaedafbaaabdbdcfdaefedccc.project.examly.io/');
-
-  await page.goto('https://8081-cbcfcdffdebaedafbaaabdbdcfdaefedccc.project.examly.io/');
- main
   await page.setViewport({
     width:1200,
     height:800,
