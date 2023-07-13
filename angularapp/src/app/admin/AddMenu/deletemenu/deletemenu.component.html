@@ -1,0 +1,30 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
+    <h4>Delete Menu</h4>
+</div>
+<div class="container bg-light cont">
+    <div [ngStyle]="{margin:'auto'}" class="row marketing pt-5 pl-5 pr-5 mt-5">
+        <div class="col-lg-6">
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Food Type: </h5>
+                <p style="display: inline-block;">{{Menu.foodMenuType}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Food Name: </h5>
+                <p style="display: inline-block;">{{Menu.foodMenuItems}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Food Cost: </h5>
+                <p style="display: inline-block;">{{Menu.foodMenuCost}}</p>
+            </span><br>
+            <div class="mx-2 mt-2 mb-4 pt-3" [ngStyle]="{textAlign:'left'}">
+                <button class="btn btn-danger" (click)="DeleteMenu()">Delete Food </button>
+            </div><br>
+        </div>
+        <div class="col-lg-6">
+            <span>
+                <h5 style="display: inline-block;padding-left:100px;">Image: </h5>
+            </span><br>
+            <img [src]="Menu.foodMenuImageURL" [ngStyle]="{width:'350px',height:'180px'}" style="padding-left:100px;">
+        </div>
+    </div>
+</div>

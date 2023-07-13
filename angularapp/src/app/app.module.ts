@@ -8,13 +8,23 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
+import { AddmenuComponent } from './admin/AddMenu/addmenu/addmenu.component';
+import { DeletemenuComponent } from './admin/AddMenu/deletemenu/deletemenu.component';
+import { EditmenuComponent } from './admin/AddMenu/editmenu/editmenu.component';
+import { GetmenuComponent } from './admin/AddMenu/getmenu/getmenu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AdminComponent,
+    AddmenuComponent,
+    DeletemenuComponent,
+    EditmenuComponent,
+    GetmenuComponent
   ],
   imports: [
     BrowserModule,
