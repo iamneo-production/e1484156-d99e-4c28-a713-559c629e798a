@@ -5,3 +5,4 @@ dotnetapp/obj/
 puppeteer/
 dotnetapp/TestProject/bin
 dotnetapp/TestProject/obj
+nunit/test/WebAppTest
