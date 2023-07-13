@@ -1,0 +1,31 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}" *ngIf="AddOn">
+    <h4>Delete AddOn</h4>
+</div>
+<div class="container bg-light cont" *ngIf="AddOn">
+    <div [ngStyle]="{margin:'auto'}" class="row marketing pt-5 pl-1 mr-3 mt-5">
+        <div class="col-lg-6">
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Add-On Name: </h5>
+                <p style="display: inline-block;">{{AddOn.addOnName}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Image: </h5>
+                <img [src]="AddOn.addOnImageURL" [ngStyle]="{width:'220px',height:'130px'}">
+            </span><br>
+            
+            <div class="mx-2 mt-2 mb-4 pt-3" [ngStyle]="{textAlign:'left'}">
+                <button class="btn btn-danger" (click)="DeleteAddOn()">Delete AddOn</button>
+            </div><br>
+        </div>
+        <div class="col-lg-6">
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Add-On price: </h5>
+                <p style="display: inline-block;">{{AddOn.addOnPrice}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Add-On Description: </h5>
+                <p style="display: inline-block;">{{AddOn.addOnDescription}}</p>
+            </span>
+        </div>
+    </div>
+</div>
