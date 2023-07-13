@@ -8,13 +8,21 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
+import { AdminnavbarComponent } from './admin/adminnavbar/adminnavbar.component';
+import { UserComponent } from './user/user.component';
+import { NavbarComponent } from './user/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AdminComponent,
+    AdminnavbarComponent,
+    UserComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="collapse navbar-collapse">
+
+        <h4 role="button" class="nav nav-brand" routerLink="/admin">Birthday Event</h4>
+        <ul class="navbar-nav mr-auto">
+            <li class="pl-3 nav-items light">
+                <a class="nav-link para " [ngStyle]="{color:'white'}" routerLink="getUsers"
+                routerLinkActive="active" role="button">Users</a>
+        </li>
+            <li class="pl-3 nav-items light">
+                    <a class="nav-link para " [ngStyle]="{color:'white'}" routerLink="getTheme"
+                        routerLinkActive="active" role="button">Themes</a>
+            </li>
+            <li class="pl-3 nav-items light">
+                <a class="nav-link para" [ngStyle]="{color:'white'}" routerLink="getMenu" routerLinkActive="active" role="button">Food Menu</a>
+            </li>
+            <li class="pl-3 nav-items light">
+                <a class="nav-link para" [ngStyle]="{color:'white'}" routerLink="getAddon" routerLinkActive="active" role="button">Add-ons</a>
+            </li>
+        </ul>
+        <h6 class="nav nav-brand">Hello, {{ userName }}</h6>
+        <div class="nav-link dropdown" (click)="toggleDropdown()" (document:click)="onDocumentClick($event)">
+            <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user fa-2x"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" [class.show]="showDropdown">
+              <span class="dropdown-item button" (click)="logout()">Logout</span>
+            </div>
+        </div>
+        <div class="profile-box" *ngIf="showProfile">
+            <p>Hello, {{ userName }}</p>
+        </div>      
+    </div>
+</nav>
