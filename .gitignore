@@ -1,0 +1,7 @@
+node_modules/
+done
+dotnetapp/bin/
+dotnetapp/obj/
+puppeteer/
+dotnetapp/TestProject/bin
+dotnetapp/TestProject/obj
