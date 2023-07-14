@@ -8,7 +8,7 @@ import { ThemeService } from '../theme.service';
   templateUrl: './edittheme.component.html',
   styleUrls: ['./edittheme.component.css']
 })
-export class EditthemeComponent {
+export class EditthemeComponent implements OnInit {
 
   @ViewChild('form') themeBookingDetails: NgForm;
   themeBooking:any;

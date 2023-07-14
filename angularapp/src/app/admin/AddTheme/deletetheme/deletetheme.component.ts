@@ -6,7 +6,7 @@ import { ThemeService } from '../theme.service';
   templateUrl: './deletetheme.component.html',
   styleUrls: ['./deletetheme.component.css']
 })
-export class DeletethemeComponent {
+export class DeletethemeComponent implements OnInit {
 
   themeBooking: any;
   id: string;

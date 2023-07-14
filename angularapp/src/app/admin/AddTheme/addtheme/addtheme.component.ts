@@ -7,7 +7,7 @@ import { ThemeService } from '../theme.service';
   templateUrl: './addtheme.component.html',
   styleUrls: ['./addtheme.component.css']
 })
-export class AddthemeComponent {
+export class AddthemeComponent implements OnInit {
   @ViewChild('form') themeBookingDetails: NgForm;
   themeAddress: string = '';
   otherTheme: string = '';

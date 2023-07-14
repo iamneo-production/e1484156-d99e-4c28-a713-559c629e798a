@@ -7,7 +7,7 @@ import { ThemeService } from '../theme.service';
   templateUrl: './get-theme.component.html',
   styleUrls: ['./get-theme.component.css']
 })
-export class GetThemeComponent {
+export class GetThemeComponent implements OnInit {
 
   constructor(private themeService:ThemeService, private route:Router) {
   }
