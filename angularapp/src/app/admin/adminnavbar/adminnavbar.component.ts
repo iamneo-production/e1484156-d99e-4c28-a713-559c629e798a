@@ -6,7 +6,7 @@ import { LoginService } from 'src/app/auth/auth.service';
   templateUrl: './adminnavbar.component.html',
   styleUrls: ['./adminnavbar.component.css']
 })
-export class AdminnavbarComponent {
+export class AdminnavbarComponent implements OnInit{
 
   userName: string;
   showDropdown: boolean = false;

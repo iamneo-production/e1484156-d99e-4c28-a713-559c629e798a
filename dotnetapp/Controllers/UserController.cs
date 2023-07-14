@@ -1,7 +1,7 @@
 #nullable disable
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BirthdayEvents.Models;
+using dotnetapp.Models;
 
 namespace dotnetapp.Controllers
 {

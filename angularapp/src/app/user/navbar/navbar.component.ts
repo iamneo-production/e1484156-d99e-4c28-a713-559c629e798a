@@ -8,7 +8,7 @@ import { CartserviceService } from 'src/app/Services/cartservice.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
 
   userName: string;
   showDropdown: boolean = false;
