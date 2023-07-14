@@ -8,7 +8,7 @@ import { CartserviceService } from 'src/app/Services/cartservice.service';
   templateUrl: './foodmenu.component.html',
   styleUrls: ['./foodmenu.component.css']
 })
-export class FoodmenuComponent {
+export class FoodmenuComponent implements OnInit{
   BookedEventDetails: any = [];
   menu :any 
   searchBox:string;

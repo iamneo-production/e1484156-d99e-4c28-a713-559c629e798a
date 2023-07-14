@@ -9,7 +9,7 @@ import { CartserviceService } from 'src/app/Services/cartservice.service';
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css']
 })
-export class BookingComponent {
+export class BookingComponent implements OnInit{
   @ViewChild('form') bookFirstFormDetails: NgForm;
   @ViewChild('subform') bookSecondFormDetails: NgForm;
   @ViewChild('CheckBox') CheckBoxDetails: ElementRef;

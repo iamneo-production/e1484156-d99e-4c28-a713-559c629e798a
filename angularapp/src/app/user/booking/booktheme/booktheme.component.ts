@@ -8,7 +8,7 @@ import { CartserviceService } from 'src/app/Services/cartservice.service';
   templateUrl: './booktheme.component.html',
   styleUrls: ['./booktheme.component.css']
 })
-export class BookthemeComponent {
+export class BookthemeComponent implements OnInit{
 
   themeBooking:any;
   id:string

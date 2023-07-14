@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './bookaddon.component.html',
   styleUrls: ['./bookaddon.component.css']
 })
-export class BookaddonComponent {
+export class BookaddonComponent implements OnInit{
 
   AddOns:any;
   addons=[]
