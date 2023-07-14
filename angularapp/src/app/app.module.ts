@@ -10,6 +10,11 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { HomepageComponent } from './user/homepage/homepage.component';
+import { AdminComponent } from './admin/admin.component';
+import { AddthemeComponent } from './admin/AddTheme/addtheme/addtheme.component';
+import { DeletethemeComponent } from './admin/AddTheme/deletetheme/deletetheme.component';
+import { EditthemeComponent } from './admin/AddTheme/edittheme/edittheme.component';
+import { GetThemeComponent } from './admin/AddTheme/get-theme/get-theme.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +24,11 @@ import { HomepageComponent } from './user/homepage/homepage.component';
     SignupComponent,
     UserComponent,
     HomepageComponent
+    AdminComponent,
+    AddthemeComponent,
+    DeletethemeComponent,
+    EditthemeComponent,
+    GetThemeComponent
   ],
   imports: [
     BrowserModule,
