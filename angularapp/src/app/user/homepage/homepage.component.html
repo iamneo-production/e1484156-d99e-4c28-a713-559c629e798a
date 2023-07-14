@@ -1,0 +1,27 @@
+<div class="container mx-auto align-items-center my-5">
+    <div class="col-6 mx-auto input-group">
+        <input type="search" id="form1" class="form-control" placeholder="Search by Place" [(ngModel)]="searchBox" (input)="searchThemes()">
+    </div>
+</div>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="align-items-center GIF" *ngIf="!Themes"><img src="../../../../assets/updatess.gif"></div>
+        <div class="col-xl mx-auto" *ngFor="let Theme of Themes">
+            <div class="card border-primary fullcard" type="button" style="width: 17rem;">
+                <img class="card-img-top image" [src]="Theme.themeImageURL" [alt]="Theme.themeName">
+                <div class="card-body">
+                    <div>
+                        <h5 style="text-align: left;margin-right: 50px;">{{Theme.themeName}}</h5>
+                        <p style="text-align: left;font-size: medium;">Place: {{Theme.themeAddress}}</p>
+                    </div>
+                    <p style="text-align: left;font-size: medium;">Price: {{Theme.themeCost | currency:"₹"}}</p>
+                    <button (click)="selecttheme(Theme.themeId)" class="btn btn-outline-primary mt-4"
+                        style="display: inline-block;font-size: large;">Select Theme</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="Themes.length === 0">
+            <h2 style="text-align: center; margin-top: 50px;" [ngStyle]="{ color: 'darkOrange' }">No themes available for the specified search criteria.</h2>
+        </div>
+    </div>
+</div>
