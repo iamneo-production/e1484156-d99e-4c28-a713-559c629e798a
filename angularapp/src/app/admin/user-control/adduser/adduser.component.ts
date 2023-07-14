@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './adduser.component.html',
   styleUrls: ['./adduser.component.css']
 })
-export class AdduserComponent {
+export class AdduserComponent implements OnInit{
   @ViewChild('form') UserDetails:NgForm;
   constructor(private userService:UserControlService,private router:Router) { }
 

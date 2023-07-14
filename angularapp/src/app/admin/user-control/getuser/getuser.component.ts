@@ -7,7 +7,7 @@ import { UserControlService } from '../user-control.service';
   templateUrl: './getuser.component.html',
   styleUrls: ['./getuser.component.css']
 })
-export class GetuserComponent {
+export class GetuserComponent implements OnInit{
 
   UserDetails: any = [];
 

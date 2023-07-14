@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './edituser.component.html',
   styleUrls: ['./edituser.component.css']
 })
-export class EdituserComponent {
+export class EdituserComponent implements OnInit{
 
   @ViewChild('form') UserDetails:NgForm;
   user:any;

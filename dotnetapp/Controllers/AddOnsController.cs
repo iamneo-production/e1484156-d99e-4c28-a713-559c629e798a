@@ -1,5 +1,5 @@
 #nullable disable
-using BirthdayEvents.Models; 
+using dotnetapp.Models; 
 using Microsoft.AspNetCore.Mvc; 
 using Microsoft.EntityFrameworkCore; 
 
