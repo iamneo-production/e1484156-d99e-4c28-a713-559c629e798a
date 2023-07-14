@@ -7,7 +7,7 @@ import { AddonService } from '../addon.service';
   templateUrl: './getaddon.component.html',
   styleUrls: ['./getaddon.component.css']
 })
-export class GetaddonComponent {
+export class GetaddonComponent implements OnInit{
 
   AddOns:any;
   id : number;

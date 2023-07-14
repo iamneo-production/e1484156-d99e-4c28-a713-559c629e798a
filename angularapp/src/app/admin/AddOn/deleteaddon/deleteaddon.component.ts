@@ -6,7 +6,7 @@ import { AddonService } from '../addon.service';
   templateUrl: './deleteaddon.component.html',
   styleUrls: ['./deleteaddon.component.css']
 })
-export class DeleteaddonComponent {
+export class DeleteaddonComponent implements OnInit{
 
   AddOn: any;
   id: string;

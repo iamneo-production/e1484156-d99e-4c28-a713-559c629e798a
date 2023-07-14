@@ -7,7 +7,7 @@ import { AddonService } from '../addon.service';
   templateUrl: './editaddon.component.html',
   styleUrls: ['./editaddon.component.css']
 })
-export class EditaddonComponent {
+export class EditaddonComponent implements OnInit{
 
   @ViewChild('form') AddOnDetails:NgForm;
   addOn:any;

@@ -7,7 +7,7 @@ import { AddonService } from '../addon.service';
   templateUrl: './addon.component.html',
   styleUrls: ['./addon.component.css']
 })
-export class AddonComponent {
+export class AddonComponent implements OnInit{
 
   imageUrl: string;
   @ViewChild('form') AddOnDetails:NgForm;
