@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './viewmoredetails.component.html',
   styleUrls: ['./viewmoredetails.component.css']
 })
-export class ViewmoredetailsComponent {
+export class ViewmoredetailsComponent implements OnInit{
   @ViewChild('form') EventDetails: NgForm;
 
   BookedThemeDetails: any;

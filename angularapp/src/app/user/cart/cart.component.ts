@@ -12,7 +12,7 @@ import { ThemeService } from 'src/app/admin/AddTheme/theme.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit{
 
   @ViewChild('form') EventDetails:NgForm;
 

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './viewbooking.component.html',
   styleUrls: ['./viewbooking.component.css']
 })
-export class ViewbookingComponent {
+export class ViewbookingComponent implements OnInit{
   constructor(private appService: AppService,private cartservice:CartserviceService, private loginservice:LoginService,private router:Router) {
   }
 
