@@ -1,0 +1,32 @@
+.fullcard{
+    min-height: 350px;
+    width: 260px;
+    border-radius: 20px;
+    border: 3px solid rgb(87, 62, 230);
+    margin-bottom: 40px;
+    margin-right: 20px;
+    text-align: center;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.247);
+}
+.btn{
+    background-color: rgb(6, 116, 180);
+    color: whitesmoke;
+    font-weight: 600;
+}
+h5{
+    height: 50px;
+    width: 240px;
+    overflow: auto;
+}
+.image{
+    height: 200px;
+    width: 265px;
+    margin: auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.GIF{
+    padding-top: 100px;
+    margin: auto;
+    height: 30px;
+}
