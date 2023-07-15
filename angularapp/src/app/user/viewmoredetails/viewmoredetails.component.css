@@ -1,0 +1,67 @@
+.commentBox,input,select{
+    margin-top: 25px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.247);
+}
+tr{
+    text-align:center;
+}
+td{
+    vertical-align: middle;
+}
+button > img,
+button > span {
+  vertical-align: middle;
+}
+.btn-sm{
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+thead{
+    color: white;
+    background-image: linear-gradient(to right, rgb(0, 0, 255),rgb(0, 102, 255), rgb(0, 145, 255),rgb(0, 102, 255),rgba(0,0,255,1))
+}
+.icons{
+    width: 80px;
+}
+.addIcon{
+    width: 35px;
+    margin-right: 10px;
+}
+.png{
+    width: 30px;
+    height: 30px;
+}
+.Thumbnail{
+    width: 100px;
+    height: 80px;
+}
+
+input,select{
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.247);
+}
+.row{
+    justify-content: space-around;
+}
+
+
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 65vh;
+    overflow-y: auto;
+}
+
+.checkout{
+    flex-basis: 80%;
+    display: grid;
+    justify-content:start;
+    grid-template-columns: repeat(2,10rem);
+    gap:1rem;
+    margin-top: 1rem;
+    padding:.5rem
+}
