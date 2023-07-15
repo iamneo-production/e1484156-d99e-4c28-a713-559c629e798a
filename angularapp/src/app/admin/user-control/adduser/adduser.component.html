@@ -1,0 +1,46 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
+    <h4>Add User</h4>
+</div>
+<div class="container bg-light cont">
+    <form [formGroup]="userform" [ngStyle]="{margin:'auto'}" class="row marketing pl-5 mt-5" (ngSubmit)="onSubmit()" #form="ngForm" autocomplete="off">
+        <div class="col-lg-6 pt-3">
+
+            <select name="userRole" id="userRole" placeholder="Select Role" formControlName="userRole" class="form-control" required ngModel>
+                <option value="" disabled selected hidden>Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <small *ngIf="userform.get('userRole')?.invalid && userform.get('userRole')?.touched" class="text-danger">Please Select Role</small>
+
+            <div class="form-group">
+                <input name="userName" id="userName" formControlName="username" class="form-control" ngModel required placeholder="User Name" type="text">
+                <small *ngIf="userform.get('username')?.invalid && userform.get('username')?.touched && userform.get('username').errors?.required" class="text-danger">Enter UserName</small>
+                <small *ngIf="userform.get('username')?.invalid && userform.get('username')?.touched && userform.get('username').errors?.pattern" class="text-danger">Invalid UserName!</small>
+            </div>
+
+            <div class="form-group">
+                <input name="email" id="email" formControlName="email" class="form-control" ngModel required placeholder="Email ID" type="text">
+                <small *ngIf="userform.get('email')?.invalid && userform.get('email')?.touched && userform.get('email').errors?.required" class="text-danger">Enter Email</small>
+                <small *ngIf="userform.get('email')?.invalid && userform.get('email')?.touched && userform.get('email').errors?.pattern" class="text-danger">Invalid Email!</small>
+            </div>
+
+            <div class="form-group">
+                <input name="mobileNumber" id="mobileNumber" formControlName="mobilenumber" class="form-control" ngModel required placeholder="Mobile Number" type="text">
+                <small *ngIf="userform.get('mobilenumber')?.invalid && userform.get('mobilenumber')?.touched && userform.get('mobilenumber').errors?.required" class="text-danger">Enter Phone Number</small>
+                <small *ngIf="userform.get('mobilenumber')?.invalid && userform.get('mobilenumber')?.touched && userform.get('mobilenumber').errors?.pattern" class="text-danger">Invalid Phone Number!</small>
+            </div>  
+
+            <div class="form-group">
+                <input name="password" id="password" formControlName="password"  class="form-control" ngModel required placeholder="Password" type="password">
+                <small *ngIf="userform.get('password')?.invalid && userform.get('password')?.touched && userform.get('password').errors?.required" class="text-danger">Enter password</small>
+            </div>
+
+            <div class="btn-group mb-4 pt-4">
+                <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Add User</button>
+            </div>
+        </div>
+        <div class="col-lg-6 pt-5">
+            <img src="../../../../assets/Theme.png" [ngStyle]="{width:'440px',height:'320px'}">
+        </div>
+    </form>
+</div>

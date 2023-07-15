@@ -1,0 +1,36 @@
+<div class="container mx-auto align-items-center mt-5">
+    <div class="col-12 mx-auto input-group">
+        <button type="button" class="btn px-4" (click)="AddNav()">
+            <img src="../../../../assets/add.png" class="addIcon">
+            <span>Add User</span>
+        </button>
+    </div>
+</div>
+<div class="Container" *ngIf="UserDetails">
+    <div class="row">
+        <div class="col-lg-8 my-5" [ngStyle]="{margin:'auto'}">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr >
+                        <th style="border-top-left-radius: 15px;" scope="col">User Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile Number</th>
+                        <th scope="col">User Role</th>
+                        <th style="border-top-right-radius: 15px;" colspan="4">Action</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let item of UserDetails;">
+                        <td>{{item.userName}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.mobileNumber}}</td>
+                        <td>{{item.userRole}}</td>
+                        <td class="icons"><img type="button" (click)="EditNav(item.userId)" class="png" src="../../assets/edit.png"></td>
+                        <td class="icons pr-5"><img type="button" (click)="DeleteNav(item.userId)" class="png" src="../../assets/delete.png"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

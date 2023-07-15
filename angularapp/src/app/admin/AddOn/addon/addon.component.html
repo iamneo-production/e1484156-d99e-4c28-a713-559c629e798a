@@ -1,0 +1,47 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
+    <h4>Add AddOn</h4>
+</div>
+<div class="container bg-light cont" >
+    <form [ngStyle]="{margin:'auto'}" class="row marketing pl-5 mt-5" autocomplete="off" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="col-lg-6 pt-3">
+            <div class="form-group">
+                <input name="addOnName" id="addOnName" class="form-control" ngModel required pattern="[a-zA-Z ]*"
+                    placeholder="add-on name" type="text">
+                <div *ngIf="form.controls.addOnName?.invalid && (form.controls.addOnName?.dirty || form.controls.addOnName?.touched)" class="text-danger">
+                    <small>Please enter a valid add-on name.</small>
+                </div>
+
+                <div class="input-group">
+                    <input name="addOnImageURL" id="addOnImageURL" placeholder="image URL" class="form-control" required [(ngModel)]="imageUrl" pattern="^(https?|ftp)://[^\s/$.?#].[^\s]*$" type="text">
+                    <div class="input-group-append pt-4">
+                    <button *ngIf="form.controls.addOnImageURL?.valid" class="btn btn-primary" type="button" (click)="openImage()">
+                        <i class="fa fa-external-link-square custom-icon" aria-hidden="true"></i>
+                    </button>
+                    </div>
+                </div>
+                <div *ngIf="form.controls.addOnImageURL?.invalid && (form.controls.addOnImageURL?.dirty || form.controls.addOnImageURL?.touched)" class="text-danger">
+                    <small>Please enter a valid URL.</small>
+                </div>
+
+                <input name="addOnPrice" id="addOnPrice" placeholder="add-on cost"
+                    class="form-control" required ngModel type="number" min="500">
+                <div *ngIf="form.controls.addOnPrice?.invalid && (form.controls.addOnPrice?.dirty || form.controls.addOnPrice?.touched)" class="text-danger">
+                    <small>Please enter a valid add-on cost (must be equal to or above ₹500).</small>
+                </div>
+
+                <input name="addOnDescription" id="addOnDescription" placeholder="add-on Description"
+                        class="form-control" required ngModel type="text">
+                <div *ngIf="form.controls.addOnDescription?.invalid && (form.controls.addOnDescription?.dirty || form.controls.addOnDescription?.touched)" class="text-danger">
+                    <small>Please fill out this field.</small>
+                </div>
+
+            </div>
+            <div class="btn-group mb-4 pt-3">
+                <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Add AddOn</button>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://www.eventsexpress.in/Activities/AnimalMagicShow21.jpg">
+        </div>
+    </form>
+</div>
