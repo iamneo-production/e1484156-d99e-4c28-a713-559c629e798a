@@ -1,0 +1,12 @@
+.active{
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.light{
+    color: rgb(226, 12, 12);
+    font-weight: 200;
+    font-size: 20px;
+}
+

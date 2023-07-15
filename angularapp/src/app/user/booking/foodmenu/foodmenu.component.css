@@ -1,0 +1,50 @@
+tr{
+    text-align:center;
+}
+td{
+    vertical-align: middle;
+}
+button > img,
+button > span {
+  vertical-align: middle;
+}
+.btn{
+    background-color: rgb(55, 43, 235);
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    float:inline-end;
+}
+
+.btn-sm{
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+}
+
+thead{
+    color: white;
+    background-image: linear-gradient(to right, rgb(45, 23, 243),rgb(42, 28, 230), rgb(20, 24, 248),rgb(40, 17, 248),rgb(61, 28, 248))
+}
+.icons{
+    width: 80px;
+}
+.addIcon{
+    width: 35px;
+    margin-right: 10px;
+}
+.png{
+    width: 30px;
+    height: 30px;
+}
+.Thumbnail{
+    width: 100px;
+    height: 80px;
+}
+
+.qty{
+    width:3rem;
+    text-align :center;
+}
