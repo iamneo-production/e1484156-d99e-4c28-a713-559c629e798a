@@ -15,6 +15,10 @@ import { AddthemeComponent } from './admin/AddTheme/addtheme/addtheme.component'
 import { DeletethemeComponent } from './admin/AddTheme/deletetheme/deletetheme.component';
 import { EditthemeComponent } from './admin/AddTheme/edittheme/edittheme.component';
 import { GetThemeComponent } from './admin/AddTheme/get-theme/get-theme.component';
+import { AddmenuComponent } from './admin/AddMenu/addmenu/addmenu.component';
+import { DeletemenuComponent } from './admin/AddMenu/deletemenu/deletemenu.component';
+import { EditmenuComponent } from './admin/AddMenu/editmenu/editmenu.component';
+import { GetmenuComponent } from './admin/AddMenu/getmenu/getmenu.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { GetThemeComponent } from './admin/AddTheme/get-theme/get-theme.componen
     AddthemeComponent,
     DeletethemeComponent,
     EditthemeComponent,
-    GetThemeComponent
+    GetThemeComponent,
+    AddmenuComponent,
+    DeletemenuComponent,
+    EditmenuComponent,
+    GetmenuComponent
   ],
   imports: [
     BrowserModule,
