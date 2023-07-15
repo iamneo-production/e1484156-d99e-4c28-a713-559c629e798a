@@ -1,0 +1,58 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
+    <h4>Delete Theme</h4>
+</div>
+<div class="container bg-light cont">
+    <div [ngStyle]="{margin:'auto'}" class="row marketing pt-4 pl-5 pr-5 mt-4">
+        <div class="col-lg-6">
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Theme Name: </h5>
+                <p style="display: inline-block; text-transform: capitalize;">{{themeBooking.themeName}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Image URL: 
+                    <button class="btn btn-outline-secondary" type="button" (click)="openImage(themeBooking.themeImageURL)">
+                        <i class="fa fa-external-link-square custom-icon" aria-hidden="true"></i>
+                    </button>
+                </h5>
+                <p style="display: inline-block; word-wrap: break-word; white-space: pre-wrap;">{{themeBooking.themeImageURL}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Theme Cost: </h5>
+                <p style="display: inline-block;">{{themeBooking.themeCost}}</p>
+            </span>
+            <br><br>
+            <img src="../../../../assets/Theme.png" [ngStyle]="{width:'330px',height:'150px'}">
+        </div>
+        <div class="col-lg-6">
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Place: </h5>
+                <p style="display: inline-block; text-transform: capitalize;">{{themeBooking.themeAddress}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Return Gift: </h5>
+                <p style="display: inline-block; text-transform: capitalize;">{{themeBooking.themeReturnGift}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Photographer Details: </h5>
+                <p style="display: inline-block; text-transform: capitalize;">{{themeBooking.themePhotographer}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Videographer Details: </h5>
+                <p style="display: inline-block; text-transform: capitalize;">{{themeBooking.themeVideographer}}</p>
+            </span><hr>
+            
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Theme Description: </h5>
+                <div class="Desc"><p  style="display: inline-block; text-transform: capitalize;">{{themeBooking.themeDescription}}</p></div>
+            </span>
+            <br>
+            <div class="mx-2 mt-2 mb-4" [ngStyle]="{textAlign:'right'}">
+                <button class="btn btn-danger" (click)="DeleteTheme()">Delete Theme</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+  
