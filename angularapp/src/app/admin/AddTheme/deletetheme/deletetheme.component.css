@@ -1,0 +1,25 @@
+.Desc{
+    height: 60px;
+    width: 400px;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+img{
+    margin-bottom: 25px; 
+    padding-left: 60px;   
+}
+.cont{
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.247);
+}
+.custom-icon {
+    margin-left: 5px;
+    cursor: pointer;
+    color: #337ab7;
+}
+  
+.custom-icon:hover {
+color: #23527c;
+}
+  
