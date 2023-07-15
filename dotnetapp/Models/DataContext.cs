@@ -9,5 +9,9 @@ namespace dotnetapp.Models
         public DataContext(DbContextOptions<DataContext> option) : base(option) { }
 
         public DbSet<User> Users{ get; set; } // DbSet property named <User> model, it represents Users entity in database
+        public DbSet<Theme> Themes { get; set; }// DbSet property named <Theme> model, it represents Themes entity in database
+        public DbSet<Menu> Menus { get; set; }// DbSet property named <Menu> model, it represents Menus entity in database
+        public DbSet<AddOn> AddOns { get; set;}// DbSet property named <AddOn> model, it represents Addons entity in database
+        public DbSet<Event> Events { get; set; }// DbSet property named <AddOn> model, it represents Events entity in database
     }
 }
