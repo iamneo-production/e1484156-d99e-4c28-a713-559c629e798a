@@ -4,7 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthComponent } from './auth/auth.component';
+import { CartComponent } from './user/cart/cart.component';
+import { ViewbookingComponent } from './user/viewbooking/viewbooking.component';
+import { ViewmoredetailsComponent } from './user/viewmoredetails/viewmoredetails.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,10 +21,12 @@ import { AddthemeComponent } from './admin/AddTheme/addtheme/addtheme.component'
 import { DeletethemeComponent } from './admin/AddTheme/deletetheme/deletetheme.component';
 import { EditthemeComponent } from './admin/AddTheme/edittheme/edittheme.component';
 import { GetThemeComponent } from './admin/AddTheme/get-theme/get-theme.component';
-
 @NgModule({
   declarations: [
     AppComponent,
+    CartComponent,
+    ViewbookingComponent,
+    ViewmoredetailsComponent
     AuthComponent,
     LoginComponent,
     SignupComponent,
