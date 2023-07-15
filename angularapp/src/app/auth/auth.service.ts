@@ -18,7 +18,7 @@ export class LoginService {
   }
 
   registerUser(RegisterDetails: any) {
-    this.http.post('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/user/signup', RegisterDetails, { responseType: "text" }).subscribe(
+    this.http.post('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/signup', RegisterDetails, { responseType: "text" }).subscribe(
       (response: any) => {
         alert(response);
         this.router.navigate(['/auth/login']);
@@ -30,7 +30,7 @@ export class LoginService {
   }
 
   loginUser(LoginDetails:any){
-    this.http.post('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/user/login', LoginDetails).subscribe((response:any )=> {
+    this.http.post('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/login', LoginDetails).subscribe((response:any )=> {
       const user = response;
       sessionStorage.setItem('user', JSON.stringify(user));
 

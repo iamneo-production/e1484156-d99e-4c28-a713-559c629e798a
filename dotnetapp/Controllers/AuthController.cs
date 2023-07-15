@@ -17,7 +17,7 @@ namespace dotnetapp.Controllers
         } 
 
         [HttpPost]
-        [Route("user/signup")]
+        [Route("admin/signup")]
         public async Task<IActionResult> signup(RegisterDto registerDto) // returns a value as a result
         {
 
@@ -54,7 +54,7 @@ namespace dotnetapp.Controllers
         } 
 
         [HttpPost]
-        [Route("user/login")] 
+        [Route("admin/login")] 
         public async Task<ActionResult<User>> Login(LoginDto loginDto)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.email == loginDto.Email); //retrive the single element from collection that satisfies condition
@@ -70,7 +70,7 @@ namespace dotnetapp.Controllers
                     userRole = user.userRole
                 };
 
-                return Ok(loggedInUser);
+                return StatusCode(201, loggedInUser);
             }
 
             return BadRequest("Invalid details! Please try again");

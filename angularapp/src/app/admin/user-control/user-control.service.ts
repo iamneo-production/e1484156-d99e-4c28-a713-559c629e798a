@@ -16,7 +16,7 @@ export class UserControlService {
   constructor(private http:HttpClient,private router: Router) { }
 
   AddUser(UserDetail: any) {
-    (this.http.post('http://localhost:8081/admin/addUser', UserDetail).subscribe(Response => {
+    (this.http.post('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/addUser', UserDetail).subscribe(Response => {
       alert("User added successfully");
       this.router.navigateByUrl('admin/getUsers');
     },
@@ -27,13 +27,13 @@ export class UserControlService {
   }
 
   GetUser(cb: CallBackFunction) {
-    (this.http.get('http://localhost:8081/admin/getUser').subscribe((response) => { 
+    (this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/getUser').subscribe((response) => { 
       cb(response);
     }));
   }
   
   GetUserById(userId: number, cb: CallBackFunction) {
-    this.http.get('http://localhost:8081/admin/getUser/' + userId).subscribe(
+    this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/getUser/' + userId).subscribe(
       (response) => { 
         cb(response);
       }
@@ -41,7 +41,7 @@ export class UserControlService {
   }
 
   EditUser(ActualUserDetails: any, EditedUserDetails: any) {
-    (this.http.put('http://localhost:8081/admin/editUser/' + ActualUserDetails.userId,
+    (this.http.put('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/editUser/' + ActualUserDetails.userId,
         {
           "userId":ActualUserDetails.userId,
           "userName":EditedUserDetails.userName,
@@ -58,7 +58,7 @@ export class UserControlService {
   }
 
   DeleteUser(UserDetails: any) {
-    this.http.delete('http://localhost:8081/admin/deleteUser/'+UserDetails.userId).subscribe(response => {
+    this.http.delete('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/deleteUser/'+UserDetails.userId).subscribe(response => {
       alert("User deleted successfully");
       this.router.navigateByUrl('admin/getUsers');
     })

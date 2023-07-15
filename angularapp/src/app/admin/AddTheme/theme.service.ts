@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -18,7 +17,7 @@ export class ThemeService {
   constructor(private http: HttpClient,private router: Router) { }
 
   AddTheme(ThemeDetail: any) {
-    (this.http.post('http://localhost:8081/admin/addTheme', ThemeDetail).subscribe(Response => {
+    (this.http.post('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/addTheme', ThemeDetail).subscribe(Response => {
       alert("Theme added successfully");
       this.router.navigateByUrl('admin/getTheme');
     },
@@ -29,13 +28,13 @@ export class ThemeService {
   }
 
   GetTheme(cb: CallBackFunction) {
-    (this.http.get('http://localhost:8081/admin/getTheme').subscribe((response) => {
+    (this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/getTheme').subscribe((response) => {
       cb(response);
     }));
   }
 
   GetThemeById(themeId: number, cb: CallBackFunction) {
-    this.http.get('http://localhost:8081/admin/getTheme/' + themeId).subscribe(
+    this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/getTheme/' + themeId).subscribe(
       (response) => {
         cb(response);
       }
@@ -43,7 +42,7 @@ export class ThemeService {
   }
 
   EditTheme(ActualThemeDetails: any, EditedThemeDetails: any) {
-    (this.http.put('http://localhost:8081/admin/editTheme/' + ActualThemeDetails.themeId,
+    (this.http.put('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/editTheme/' + ActualThemeDetails.themeId,
       {
         "themeId": ActualThemeDetails.themeId,
         "themeName": EditedThemeDetails.themeName,
@@ -66,7 +65,7 @@ export class ThemeService {
   }
 
   DeleteTheme(ThemeDetails: any) {
-    this.http.delete('http://localhost:8081/admin/deleteTheme/'+ThemeDetails.themeId).subscribe(response => {
+    this.http.delete('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/deleteTheme/'+ThemeDetails.themeId).subscribe(response => {
       alert("Theme deleted successfully");
       this.router.navigateByUrl('admin/getTheme');
     })

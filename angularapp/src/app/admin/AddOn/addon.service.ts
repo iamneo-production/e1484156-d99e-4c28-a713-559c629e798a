@@ -15,7 +15,7 @@ export class AddonService {
   constructor(private http: HttpClient,private router: Router) { }
 
   AddAddOn(AddOnDetail: any) {
-    (this.http.post('http://localhost:8081/admin/addAddOn', AddOnDetail).subscribe(Response => {
+    (this.http.post('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/addAddOn', AddOnDetail).subscribe(Response => {
       alert("AddOn added successfully");
       this.router.navigateByUrl('admin/getAddon');
     },
@@ -27,14 +27,14 @@ export class AddonService {
   }
   
   GetAddOn(cb: CallBackFunction) {
-    this.http.get('http://localhost:8081/admin/getAddOn').subscribe((response) => {
+    this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/getAddOn').subscribe((response) => {
       cb(response);
     });
   }
 
 
   GetAddOnById(AddOnId: number, cb: CallBackFunction) {
-    this.http.get('http://localhost:8081/admin/getAddOn/' + AddOnId).subscribe(
+    this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/getAddOn/' + AddOnId).subscribe(
       (response) => {
         cb(response);
       }
@@ -42,7 +42,7 @@ export class AddonService {
   }
 
   EditAddOn(ActualAddOnDetails: any, EditedAddOnDetails: any) {
-    (this.http.put('http://localhost:8081/admin/editAddOn/' + ActualAddOnDetails.addOnId,
+    (this.http.put('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/editAddOn/' + ActualAddOnDetails.addOnId,
       {
         "addOnId":ActualAddOnDetails.addOnId,
         "addOnImageURL":EditedAddOnDetails.addOnImageURL,
@@ -62,7 +62,7 @@ export class AddonService {
   }
 
   DeleteAddOn(AddOnDetails: any) {
-    this.http.delete('http://localhost:8081/admin/deleteAddOn/'+AddOnDetails.addOnId).subscribe(response => {
+    this.http.delete('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/deleteAddOn/'+AddOnDetails.addOnId).subscribe(response => {
       alert("AddOn deleted successfully");
       this.router.navigateByUrl('admin/getAddon');
     })
