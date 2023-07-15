@@ -1,0 +1,50 @@
+<div class="container mx-auto align-items-center mt-5">
+    <div class="row">
+      <div class="col">
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn-sm px-4" (click)="backPage()">
+          <span>Book Event</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="Container" *ngIf="bookedEventDetails.length <= 0">
+    <h2 style="text-align: center; margin-top: 50px;" [ngStyle]="{ color: 'darkOrange' }">No Bookings Yet</h2>
+  </div>
+  
+  <div class="Container" *ngIf="bookedEventDetails.length > 0">
+    <div class="row">
+      <div class="col-lg-8 my-5" [ngStyle]="{ margin: 'auto' }">
+        <table class="table">
+          <thead class="thead-light" [ngStyle]="{ borderBottom: '1px solid', padding: '10px', borderTopLeftRadius: '10px', borderTopRightRadius: '10px' }">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Date (yyyy-mm-dd)</th>
+              <th scope="col">Time</th>
+              <th scope="col">Price</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of bookedEventDetails; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ item.applicantName }}</td>
+              <td>{{ item.eventDate }}</td>
+              <td>{{ item.eventTime }}</td>
+              <td>{{ item.eventCost | currency: 'INR' }}</td>
+              <td>
+                <img type="button" (click)="editEvent(item)" src="../../assets/edit.png">
+              </td>
+              <td>
+                <img type="button" (click)="DeleteEvent(item)" src="../../assets/delete.png">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+    

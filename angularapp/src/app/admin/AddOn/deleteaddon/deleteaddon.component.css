@@ -1,0 +1,16 @@
+.Desc{
+    height: 100px;
+    width: 400px;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+img{
+    margin-bottom: 25px;
+    width: 250px;
+    height: 300px;   
+}
+.cont{
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.247);
+}
