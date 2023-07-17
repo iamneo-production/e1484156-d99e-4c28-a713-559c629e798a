@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="collapse navbar-collapse">
 
-        <h4 role="button" class="nav nav-brand" routerLink="/user/getAllThemes">Birthday Event</h4>
+        <h4 role="button" class="nav nav-brand custom-margin-1" routerLink="/user/getAllThemes">Birthday Event</h4>
         <ul class="navbar-nav mr-auto">
             <li class="nav-items light">
                 <a class="pl-5 nav-link" type="button" [ngStyle]="{color:'white'}" routerLink="getBookedTheme" routerLinkActive="active">View Booked Event</a>
             </li>
         </ul>
-        <h6 class="nav nav-brand">Hello, {{ userName }}</h6>
+        <h6 class="nav nav-brand custom-margin-2">Hello, {{ userName }}</h6>
         <div class="nav-link dropdown" (click)="toggleDropdown()" (document:click)="onDocumentClick($event)">
             <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-user fa-2x"></i>

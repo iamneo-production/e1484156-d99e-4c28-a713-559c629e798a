@@ -36,3 +36,11 @@ nav{
     background-color: blue;
     color: white;
 }
+
+.custom-margin-1 {
+    margin-right: 25px;
+  }
+
+.custom-margin-2 {
+    margin-left: 62%;
+}

@@ -34,9 +34,9 @@
                 </div>
 
                 <input name="foodMenuCost" id="foodMenuCost" placeholder="menu cost" [ngModel]="menu.foodMenuCost"
-                    class="form-control" required type="number" min="20">
-                <div *ngIf="form.controls.foodMenuCost?.invalid && (form.controls.foodMenuCost?.dirty || form.controls.foodMenuCost?.touched)" class="text-danger">
-                    <small>Please enter a valid menu cost (must be equal to or above ₹20).</small>
+                    class="form-control" required type="number">
+                <div *ngIf="form.controls.foodMenuCost?.value < 50 && (form.controls.foodMenuCost?.dirty || form.controls.foodMenuCost?.touched)" class="text-danger">
+                    <small>Please enter a valid menu cost (must be equal to or above ₹50).</small>
                 </div>
             </div><br>
 

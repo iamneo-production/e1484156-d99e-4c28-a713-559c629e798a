@@ -24,8 +24,8 @@
                 <small>Please enter a valid URL.</small>
                 </div>
 
-                <input name="themeCost" id="themeCost" placeholder="theme cost" class="form-control" required [ngModel]="themeBooking.themeCost" type="number" min="2000">
-                <div *ngIf="form.controls.themeCost?.invalid && (form.controls.themeCost?.dirty || form.controls.themeCost?.touched)" class="text-danger">
+                <input name="themeCost" id="themeCost" placeholder="theme cost" class="form-control" required [ngModel]="themeBooking.themeCost" type="number">
+                <div *ngIf="form.controls.themeCost?.value < 2000 && (form.controls.themeCost?.dirty || form.controls.themeCost?.touched)" class="text-danger">
                 <small>Please enter a valid theme cost (must be equal to or above ₹2000).</small>
                 </div>
 
@@ -104,7 +104,7 @@
                 </div>
               </div>
 
-            <div class="mx-2 mb-3" [ngStyle]="{textAlign:'right'}">
+            <div class="mx-2 mb-3 pt-4" [ngStyle]="{textAlign:'right'}">
                 <div class="btn-group">
                     <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Update Theme</button>
                 </div>
