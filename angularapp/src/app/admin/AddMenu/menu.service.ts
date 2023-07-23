@@ -15,7 +15,7 @@ export class MenuService {
   constructor(private http: HttpClient,private router: Router) { }
 
   AddMenu(MenuDetail: any) {
-    (this.http.post('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/addMenu', MenuDetail).subscribe(Response => {
+    (this.http.post('https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/admin/addMenu', MenuDetail).subscribe(Response => {
       alert("Menu added successfully");
       this.router.navigateByUrl('admin/getMenu');
     },
@@ -27,14 +27,14 @@ export class MenuService {
   }
 
   GetMenu(cb: CallBackFunction) {
-    this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/getMenu').subscribe((response) => {
+    this.http.get('https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/admin/getMenu').subscribe((response) => {
       cb(response);
     });
   }
 
 
   GetMenuById(menuId: number, cb: CallBackFunction) {
-    this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/getMenu/' + menuId).subscribe(
+    this.http.get('https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/admin/getMenu/' + menuId).subscribe(
       (response) => {
         cb(response);
       }
@@ -42,7 +42,7 @@ export class MenuService {
   }
 
   EditMenu(ActualMenuDetails: any, EditedMenuDetails: any) {
-    (this.http.put('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/editMenu/' + ActualMenuDetails.foodMenuId,
+    (this.http.put('https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/admin/editMenu/' + ActualMenuDetails.foodMenuId,
       {
         "foodMenuId":ActualMenuDetails.foodMenuId,
         "foodMenuImageURL":EditedMenuDetails.foodMenuImageURL,
@@ -62,7 +62,7 @@ export class MenuService {
   }
 
   DeleteMenu(MenuDetails: any) {
-    this.http.delete('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/admin/deleteMenu/'+MenuDetails.foodMenuId).subscribe(response => {
+    this.http.delete('https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/admin/deleteMenu/'+MenuDetails.foodMenuId).subscribe(response => {
       alert("Menu deleted successfully");
       this.router.navigateByUrl('admin/getMenu');
     })

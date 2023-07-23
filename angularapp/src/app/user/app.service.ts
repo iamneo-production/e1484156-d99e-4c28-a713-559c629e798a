@@ -17,11 +17,11 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   GetBookedEvent() {
-    return this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/user/getAllThemes');
+    return this.http.get('https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/user/getAllThemes');
   }
 
   GetBookedEventById(eventId:number,cb:CallBackFunction){
-    (this.http.get('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/user/getBookedTheme/'+eventId).subscribe((response) => {
+    (this.http.get('https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/user/getBookedTheme/'+eventId).subscribe((response) => {
       cb(response);
     }
     ));
@@ -29,14 +29,14 @@ export class AppService {
 
   DeleteBookedEvent(item: any) {
     if (confirm("Are you sure want to delete this event ??")) {
-      this.http.delete('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/user/deleteTheme/' + item.eventId).subscribe(res => console.log(res));
+      this.http.delete('https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/user/deleteTheme/' + item.eventId).subscribe(res => console.log(res));
     }
   }
 
   AddEvent(theme:any[],event: any, food: string,addon:string,userId:number,total:number) {
     
     this.http.post(
-      'https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/user/bookTheme',
+      'https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/user/bookTheme',
       {
         "applicantAddress": event.applicantAddress,
         "applicantEmail": event.applicantEmail,
@@ -57,7 +57,7 @@ export class AppService {
 
   
   EditEvent(theme:any,eventid:number,event: any, food: string,addon:string,userid:number,total:number) {
-      this.http.put('https://8080-cadcffeefefcdaedafbaaabdbddffcfbdfeceb.project.examly.io/user/editTheme/' + eventid, {
+      this.http.put('https://8080-cadcffeefefcdaedafbaaabdbdcfdaefedccc.project.examly.io/user/editTheme/' + eventid, {
         "eventId":eventid,
         "applicantAddress": event.applicantAddress,
         "applicantEmail": event.applicantEmail,
