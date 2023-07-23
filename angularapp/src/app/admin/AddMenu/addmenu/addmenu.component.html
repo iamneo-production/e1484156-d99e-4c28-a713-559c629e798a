@@ -1,0 +1,53 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
+    <h4>Add Menu</h4>
+</div>
+<div class="container bg-light cont" >
+    <form [ngStyle]="{margin:'auto'}" class="row marketing pl-5 mt-5" autocomplete="off" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="col-lg-6 pt-5">
+
+            <div class="form-group">
+
+                <select name="foodMenuType" id="foodMenuType" placeholder="Select the food type" class="form-control" required ngModel>
+                    <option value="" disabled selected hidden>Select the food type</option>
+                    <option>Vegeterian</option>
+                    <option>Non-Vegeterian</option>
+                </select>
+                <div *ngIf="form.controls.foodMenuType?.invalid && (form.controls.foodMenuType?.dirty || form.controls.foodMenuType?.touched)" class="text-danger">
+                    <small>Please select an option.</small>
+                </div>
+
+                <input name="foodMenuItems" id="foodMenuItems" class="form-control" ngModel required pattern="[a-zA-Z ]*"
+                    placeholder="menu name" type="text">
+                <div *ngIf="form.controls.foodMenuItems?.invalid && (form.controls.foodMenuItems?.dirty || form.controls.foodMenuItems?.touched)" class="text-danger">
+                    <small>Please enter a valid menu name.</small>
+                </div>
+            
+                <div class="input-group">
+                    <input name="foodMenuImageURL" id="foodMenuImageURL" placeholder="image URL" class="form-control" required [(ngModel)]="imageUrl" pattern="^(https?|ftp)://[^\s/$.?#].[^\s]*$" type="text">
+                    <div class="input-group-append pt-4">
+                    <button *ngIf="form.controls.foodMenuImageURL?.valid" class="btn btn-primary" type="button" (click)="openImage()">
+                        <i class="fa fa-external-link-square custom-icon" aria-hidden="true"></i>
+                    </button>
+                    </div>
+                </div>
+                <div *ngIf="form.controls.foodMenuImageURL?.invalid && (form.controls.foodMenuImageURL?.dirty || form.controls.foodMenuImageURL?.touched)" class="text-danger">
+                    <small>Please enter a valid URL.</small>
+                </div>
+
+                <input name="foodMenuCost" id="foodMenuCost" placeholder="menu cost"
+                    class="form-control" required ngModel type="number">
+                <div *ngIf="form.controls.foodMenuCost?.value < 50 && (form.controls.foodMenuCost?.dirty || form.controls.foodMenuCost?.touched)" class="text-danger">
+                    <small>Please enter a valid menu cost (must be equal to or above ₹50).</small>
+                </div>
+            </div><br>
+
+                <div class="btn-group mb-4">
+                    <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Add Food Item</button>
+                </div>
+            
+        </div>
+        <div class="col-lg-6">
+            <img src="../../../../assets/foodMenu.png">
+        </div>
+    </form>
+</div>

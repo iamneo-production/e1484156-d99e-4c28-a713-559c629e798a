@@ -1,0 +1,77 @@
+<div class="container mx-auto align-items-center mt-5">  
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <h4 [ngStyle]="{color:'darkOrange'}">Applicant Details</h4>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-light">
+    <form  [ngStyle]="{margin:'auto'}" class="row marketing pl-5 mt-5" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="col-lg-6 pt-3">
+            <input name="eventName" class="form-control" required [ngModel]="themeBooking.themeName"  type="text" disabled>
+            <input name="applicantName" placeholder="applicant name" class="form-control" required ngModel pattern="[a-zA-Z ]*"
+                type="text">
+            <div *ngIf="form.controls.applicantName.invalid && (form.controls.applicantName.touched || form.controls.applicantName.dirty)" class="text-danger">
+                <div *ngIf="form.controls.applicantName.errors.pattern">
+                    please enter a valid name.
+                </div>
+                <div *ngIf="form.controls.applicantName.errors.required">
+                    please enter the name.
+                </div>
+            </div>
+            <input name="applicantAddress" placeholder="applicant address" class="form-control" required ngModel
+                type="text">
+                <div *ngIf="form.controls.applicantAddress.invalid && (form.controls.applicantAddress.touched || form.controls.applicantAddress.dirty)" class="text-danger">
+                    please enter the address.
+                </div>
+            <input name="applicantMobile" placeholder="applicant mobile no" class="form-control" required ngModel
+                 type="text" pattern="^[6-9][0-9]{9}$">
+                 <div *ngIf="form.controls.applicantMobile.invalid && (form.controls.applicantMobile.touched || form.controls.applicantMobile.dirty)" class="text-danger">
+                    <div *ngIf="form.controls.applicantMobile.errors.pattern">
+                        please enter a valid mobile number.
+                    </div>
+                    <div *ngIf="form.controls.applicantMobile.errors.required">
+                        please enter the mobile number.
+                    </div>
+                </div>
+            <input name="applicantEmail"  placeholder="applicant email ID" class="form-control" required  ngModel
+                type="email" email pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <div *ngIf="form.controls.applicantEmail.invalid && (form.controls.applicantEmail.touched || form.controls.applicantEmail.dirty)" class="text-danger">
+                    <div *ngIf="form.controls.applicantEmail.errors.pattern">
+                        please enter a valid email id.
+                    </div>
+                    <div *ngIf="form.controls.applicantEmail.errors.required">
+                        please enter the email id.
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-lg-6 pt-3">
+            <input name="eventAddress" class="form-control" required [ngModel]="themeBooking.themeAddress"
+                type="text" disabled>
+            <input name="eventDate" placeholder="date of the event" class="form-control" required ngModel
+                type="date"  min="{{minDate}}">
+            <div *ngIf="form.controls.eventDate.invalid && (form.controls.eventDate.touched || form.controls.eventDate.dirty)" class="text-danger">
+                please select the date
+            </div>
+            <input name="eventTime" placeholder="time of the event" class="form-control" required ngModel
+                type="time">
+            <div *ngIf="form.controls.eventTime.invalid && (form.controls.eventTime.touched || form.controls.eventTime.dirty)" class="text-danger">
+                please select the time
+            </div>
+            <input name="noOfPeople" placeholder="number of people" class="form-control" required ngModel
+                type="number">
+                <div *ngIf="form.controls.noOfPeople.value < 31 && (form.controls.noOfPeople.touched || form.controls.noOfPeople.dirty)" class="text-danger">
+                    <small>please enter no of people above 30.</small>
+                </div>
+        </div>
+        <div class="col-lg-2 mx-2 mb-3 pt-4 ">
+            <div class="btn-group">
+                <button class="btn btn-danger" type="button" [disabled]="!form.valid" (click)="nextpage()">Next Page</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

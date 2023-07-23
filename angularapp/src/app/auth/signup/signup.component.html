@@ -1,0 +1,59 @@
+<div class="application-name">
+    <h1 class="title">Birthday Event Management System</h1>
+</div>
+
+<div class="container justify-content-center p-4 mt-3 d-flex" style="background:rgb(63, 124, 216); height: 650px; width: 1050px;border-radius: 25px;">
+    <div class="p-3">
+        <img class="rounded" src="https://media.istockphoto.com/vectors/cheerful-friends-having-fun-at-birthday-party-vector-id1250665481?k=20&m=1250665481&s=612x612&w=0&h=M6kHQcOwa0IG4JL1xCDCQbZ2z0nOBOs2dwwlAvZBaYs=" alt="Image" height="580px" width="600px">
+    </div>
+
+    <div class="w-50">
+        <h1 style="font-size: xx-large; text-align: center;"  class="text-white"> Sign-Up</h1>
+        <form [formGroup]="userform" (ngSubmit)="onSubmit()" autocomplete="off">
+
+            <label for="userrole" class="form-label text-white mt-4">Select Role:  </label>
+            <select name="userrole" [formControl]="userform.controls.userrole" class="form-select bg-transparent text-white" id="userrole">
+              <option  name="user" value="user" style="color:black;" class="selected">User</option>
+              <option name="admin" value="admin" style="color:black;" id="admin">Admin</option>
+            </select>
+            <small *ngIf="userform.get('userrole')?.invalid && userform.get('userrole')?.touched" class="text-warning">Please Select Role</small>
+
+            <div class="form-group mt-2">
+              <input id="email" name="email" formControlName="email" class="form-control bg-transparent text-white" type="email" placeholder="Enter Email" required>
+              <small *ngIf="userform.get('email')?.invalid && userform.get('email')?.touched && userform.get('email').errors?.required" class="text-warning">Enter Email</small>
+              <small *ngIf="userform.get('email')?.invalid && userform.get('email')?.touched && userform.get('email').errors?.pattern" class="text-warning">Invalid Email!</small>
+            </div>
+            
+            <div class="form-group mt-2 ">
+              <input id="username" name="username" formControlName="username" class="form-control bg-transparent text-white" type="text" placeholder="Enter User Name " required>
+              <small *ngIf="userform.get('username')?.invalid && userform.get('username')?.touched && userform.get('username').errors?.required" class="text-warning">Enter UserName</small>
+              <small *ngIf="userform.get('username')?.invalid && userform.get('username')?.touched && userform.get('username').errors?.pattern" class="text-warning">Invalid UserName!</small>
+            </div>
+
+            <div class="form-group mt-2 ">
+              <input id="mobileNumber" name="mobilenumber" formControlName="mobilenumber" class="form-control bg-transparent text-white " type="number " placeholder="Enter Mobile Number " required>
+              <small *ngIf="userform.get('mobilenumber')?.invalid && userform.get('mobilenumber')?.touched && userform.get('mobilenumber').errors?.required" class="text-warning">Enter Phone Number</small>
+              <small *ngIf="userform.get('mobilenumber')?.invalid && userform.get('mobilenumber')?.touched && userform.get('mobilenumber').errors?.pattern" class="text-warning">Invalid Phone Number!</small>
+            </div>
+
+            <div class="form-group mt-2 ">
+              <input id="password" name="password" formControlName="password" class="form-control bg-transparent text-white " type="password" placeholder="Password" required>
+              <small *ngIf="userform.get('password')?.invalid && userform.get('password')?.touched && userform.get('password').errors?.required" class="text-warning">Enter password</small>
+            </div>
+
+            <div class="form-group mt-2 ">
+                <input id="confirmPassword" formControlName="confirmpassword" (change)="onCheckPassword()" class="form-control bg-transparent text-white " type="password" placeholder="Confirm Password " required>
+                <small *ngIf="userform.get('confirmpassword')?.hasError('mismatch')" class="text-warning">Password do not match.</small>
+            </div>
+
+            <div class="form-group mt-2 text-center pt-3">
+                <button [disabled]="userform?.invalid" type="submit" class="btn-lg text-white btn-outline-light " style="background: blue; border-radius: 10px; border:1px solid white ">Submit</button>
+            </div>
+
+            <div class="text-center pt-2">
+              <span class="text-white">Already registered? </span>
+              <a class="text-white" routerLink="/auth/login"><b>Login</b></a>
+            </div>
+        </form> <br>
+    </div>
+</div>

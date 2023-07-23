@@ -1,0 +1,276 @@
+<div class="container mx-auto align-items-center mt-5">   
+    <div class="row">
+
+        <div class="col">
+            <button type="button"  class="btn-sm px-4"  (click)="popup()">
+            <span>Food</span>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"  class="btn-sm px-4" (click)="addonpopup()">
+            <span>Add On</span>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button" style="float:right" class="btn-sm px-4" [disabled]="!form.valid" (click)="savepopup()">
+            <span>Save</span>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<div class="container bg-light"  >
+    <form  [ngStyle]="{margin:'auto'}" class="row marketing pt-3 pl-3 pr-3 mt-3"  #form="ngForm">
+        <div class="col-lg-6">
+         
+            <input name="eventName" class="form-control" required [ngModel]="BookedThemeDetails.themeName"  type="text" disabled>
+            <input name="applicantName" placeholder="Enter applicant name" class="form-control" required [ngModel]="BookedEventDetails.applicantName"
+                type="text" pattern="[a-zA-Z ]*">
+                <div *ngIf="form.controls.applicantName.invalid && (form.controls.applicantName.touched || form.controls.applicantName.dirty)" class="text-danger">
+                    <div *ngIf="form.controls.applicantName.errors.pattern">
+                        please enter a valid name.
+                    </div>
+                    <div *ngIf="form.controls.applicantName.errors.required">
+                        please enter the name.
+                    </div>
+                </div>
+            <input name="applicantAddress" placeholder="Enter applicant address" class="form-control" required [ngModel]="BookedEventDetails.applicantAddress"
+                type="text">
+                <div *ngIf="form.controls.applicantAddress.invalid && (form.controls.applicantAddress.touched || form.controls.applicantAddress.dirty)" class="text-danger">
+                    please enter the address.
+                </div>
+            <input name="applicantMobile" placeholder="Enter applicant mobile no" class="form-control" required [ngModel]="BookedEventDetails.applicantMobile"
+                 type="text" pattern="^[6-9][0-9]{9}$">
+                 <div *ngIf="form.controls.applicantMobile.invalid && (form.controls.applicantMobile.touched || form.controls.applicantMobile.dirty)" class="text-danger">
+                    <div *ngIf="form.controls.applicantMobile.errors.pattern">
+                        please enter a valid mobile number.
+                    </div>
+                    <div *ngIf="form.controls.applicantMobile.errors.required">
+                        please enter the mobile number.
+                    </div>
+                </div>
+            <input name="applicantEmail"  placeholder="Enter applicant email ID" class="form-control" required  [ngModel]="BookedEventDetails.applicantEmail"
+                type="email" email pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <div *ngIf="form.controls.applicantEmail.invalid && (form.controls.applicantEmail.touched || form.controls.applicantEmail.dirty)" class="text-danger">
+                    <div *ngIf="form.controls.applicantEmail.errors.pattern">
+                        please enter a valid email id.
+                    </div>
+                    <div *ngIf="form.controls.applicantEmail.errors.required">
+                        please enter the email id.
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-lg-6">
+            <input name="eventAddress" class="form-control" required [ngModel]="BookedThemeDetails.themeAddress"
+                type="text" disabled>
+            <input name="eventDate" placeholder="Enter date of the event" class="form-control" required [ngModel]="BookedEventDetails.eventDate"
+                type="date"  min="{{minDate}}">
+                <div *ngIf="form.controls.eventDate.invalid && (form.controls.eventDate.touched || form.controls.eventDate.dirty)" class="text-danger">
+                    please select the date
+                </div>
+            <input name="eventTime" placeholder="Enter time of the event" class="form-control" required [ngModel]="BookedEventDetails.eventTime"
+                type="time">
+                <div *ngIf="form.controls.eventTime.invalid && (form.controls.eventTime.touched || form.controls.eventTime.dirty)" class="text-danger">
+                    please select the time
+                </div>
+            <input name="noOfPeople" placeholder="number of people" class="form-control" required [ngModel]="BookedEventDetails.noOfPeople"
+                type="number">
+                <div *ngIf="form.controls.noOfPeople.value < 31 && (form.controls.noOfPeople.touched || form.controls.noOfPeople.dirty)" class="text-danger">
+                    <small>please enter no of people above 30.</small>
+                </div>
+        </div>
+    </form>
+</div>
+
+<div class="Container" *ngIf="BookedEventDetails">
+    <div class="row">
+        <div class="col-lg-8 my-5" [ngStyle]="{margin:'auto'}">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr >
+                        <th style="border-top-left-radius: 15px;" scope="col">Theme Image</th>
+                        <th scope="col">Theme Name</th>
+                        <th scope="col">Place</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr>
+                        <td><img class="Thumbnail" [src]="BookedThemeDetails.themeImageURL" [alt]="BookedThemeDetails.themeName"></td>
+                        <td>{{BookedThemeDetails.themeName}}</td>
+                        <td>{{BookedThemeDetails.themeAddress}}</td>
+                        <td>{{BookedThemeDetails.themeCost | currency:"₹"}}</td> 
+                    <tr>     
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="Container" *ngIf="fooditems.length>0">
+    <div class="row">
+        <div class="col-lg-8 my-5" [ngStyle]="{margin:'auto'}">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr >
+                        <th style="border-top-left-radius: 15px;" scope="col">Item Image</th>
+                        <th scope="col">Food</th>
+                        <th scope="col">category</th>
+                        <th scope="col">price</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let item of fooditems; let i=index">
+                        <td><img class="Thumbnail" [src]="item.foodMenuImageURL" [alt]="item.foodMenuItems"></td>
+                        <td>{{item.foodMenuItems}}</td>
+                        <td>{{item.foodMenuType}}</td>
+                        <td>{{item.foodMenuCost | currency:"₹"}}</td>
+                        <td class="icons pr-5"><img type="button" (click)="onDeletefoodmenu(i)" class="png" src="../../assets/delete.png"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="Container" *ngIf="addons.length>0">
+    <div class="row">
+        <div class="col-lg-8 my-5" [ngStyle]="{margin:'auto'}">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr >
+                        <th style="border-top-left-radius: 15px;" scope="col">AddOn Image</th>
+                        <th scope="col">AddOn Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let item of addons;let i=index">
+                        <td><img class="Thumbnail" [src]="item.addOnImageURL" [alt]="item.addOnName"></td>
+                        <td>{{item.addOnName}}</td>
+                        <td>{{item.addOnPrice | currency:"₹"}}</td>
+                        <td class="icons pr-5"><img type="button" (click)="onDeleteaddon(i)" class="png" src="../../assets/delete.png"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal mod" tabindex="-1" role="dialog" [ngStyle]="{display:displayStyle}">
+    <div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Food Items</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr >
+                            <th style="border-top-left-radius: 15px;" scope="col">Item Image</th>
+                            <th scope="col">Food Name</th>
+                            <th scope="col">category</th>
+                            <th scope="col">price</th>
+                            <th style="border-top-right-radius: 15px;" colspan="4">Add</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let item of MenuDetails">
+                            <td><img class="Thumbnail" [src]="item.foodMenuImageURL" [alt]="item.foodMenuItems"></td>
+                            <td>{{item.foodMenuItems}}</td>
+                            <td>{{item.foodMenuType}}</td>
+                            <td>{{item.foodMenuCost | currency:"₹"}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" (click)="addfoodtocart(item)">+
+                                  </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>                
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="closePopup()">
+                    Close
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal mod" tabindex="-1" role="dialog" [ngStyle]="{display:displayStyleaddon}">
+    <div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Add Ons</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr >
+                            <th style="border-top-left-radius: 15px;" scope="col">AddOn Image</th>
+                            <th scope="col">AddOnName</th>
+                            <th scope="col">price</th>
+                            <th scope="col">Add</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let item of AddOnDetails; let i=index">
+                            <td><img class="Thumbnail" [src]="item.addOnImageURL" [alt]="item.addOnName"></td>
+                            <td>{{item.addOnName}}</td>
+                            <td>{{item. addOnPrice | currency:"₹"}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" (click)="addaddontocart(item)">+
+                                  </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="addonclosePopup()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal mod" tabindex="-1" role="dialog" [ngStyle]="{display:displayStylecheckout}">
+    <div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Price Update</h4>
+            </div>
+            <div class="modal-body">
+                <div class="checkout">
+                    <div><b>Subtotal = </b></div>
+                    <p>FoodCost per plate * No.of People + AddOn Cost</p>
+                    <div><b>Subtotal</b></div>
+                    <p>{{subtotal | currency:"₹"}}</p>
+                    <div><b>Theme Cost</b></div>
+                    <p>{{ThemeCost | currency:"₹"}}</p>
+                    <div><b>Total</b></div>
+                    <p>{{total | currency:"₹"}}</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="OnCheckOut()">Confirm</button>
+                <button type="button" class="btn btn-danger" (click)="saveclosePopup()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

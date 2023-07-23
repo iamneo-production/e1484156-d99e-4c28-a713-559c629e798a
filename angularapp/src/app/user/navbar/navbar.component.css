@@ -1,0 +1,46 @@
+.active{
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.light{
+    color: rgb(226, 12, 12);
+    font-weight: 200;
+    font-size: 20px;
+}
+a{
+    color: white;
+}
+nav{
+    color: white;
+    box-shadow: 0px 4px 7px rgba(37, 37, 37, 0.534);
+    background-image: linear-gradient(to bottom left,rgb(49, 35, 247),rgb(48, 45, 235),rgb(35, 80, 218),blue);
+}
+
+.fa{
+    position: relative;
+}
+
+.cart{
+    position:absolute;
+    top:-12px;
+    left:4px;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.custom-margin-1 {
+    margin-right: 25px;
+  }
+
+.custom-margin-2 {
+    margin-left: 62%;
+}
